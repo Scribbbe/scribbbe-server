@@ -1,0 +1,12 @@
+{
+  "extends": "google",
+  "parserOptions":{
+    "sourceType": "module"
+  },
+  "rules": {
+    "quotes": "off",
+    "semi": "off",
+    "comma-dangle":"off",
+    "object-curly-spacing": "off"
+  }
+}

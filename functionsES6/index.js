@@ -1,10 +1,6 @@
-import * as functions from "firebase-functions";
+import { https } from "firebase-functions"
+import setupGraphQLServer from "./graphql/server"
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
+const graphQLServer = setupGraphQLServer()
 
-export let helloWord = functions.https.onRequest((req, res) => {
-  let world = `from Es6 in Cloud Functions!`
-  res.status(200).send(`Hello ${world}`)
-});
+export const api = https.onRequest(graphQLServer)
