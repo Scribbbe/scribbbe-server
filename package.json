@@ -1,0 +1,19 @@
+{
+  "name": "scribbbe-data",
+  "version": "1.0.0",
+  "description": "graphql server for Scribbbe",
+  "main": "index.js",
+  "author": "Darren <darren@odden.io>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.1"
+  },
+  "scripts": {
+    "package-functions": "babel 'functionsES6' --out-dir 'functions' --presets=es2015 --copy-files --ignore 'node_modules'",
+    "postpackage-functions": "cd functions && yarn",
+    "prepackage-functions": "rimraf functions",
+    "deploy": "yarn run package-functions && firebase deploy"
+  }
+}
